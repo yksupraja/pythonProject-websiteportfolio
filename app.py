@@ -1,36 +1,40 @@
 from flask import Flask, render_template, request
-from flask_mail import Mail, Message
+import smtplib
 
 app = Flask(__name__)
-
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'supraja2d@gmail.com'
-app.config['MAIL_PASSWORD'] = 'pndsmcfwifbnbhyv'  # Use environment variable or configuration file
-
-mail = Mail(app)
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/send_email', methods=['POST'])
+@app.route('/send-email', methods=['POST'])
 def send_email():
     name = request.form.get('name')
-    email = request.form.get('email')
+    from_email = request.form.get('from_email')
+    to_email = request.form.get('to_email')
+    subject = request.form.get('subject')
     message = request.form.get('message')
 
-    msg = Message('New Message from Contact Form',
-                  sender='supraja2d@gmail.com',
-                  recipients=['supraja2d@gmail.com'])
+    # Send email using SMTP
+    smtp_server = 'smtp.gmail.com'
+    smtp_port = 587
+    smtp_username = 'supraja2d@gmail.com'
+    smtp_password = 'pndsmcfwifbnbhyv'
 
-    msg.body = f"Name: {name}\nEmail: {email}\n\n{message}"
+    try:
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(smtp_username, smtp_password)
 
-    mail.send(msg)
+            email_body = f"Name: {name}\nFrom: {from_email}\nTo: {to_email}\nSubject: {subject}\n\n{message}"
 
-    return "Email sent successfully"
+            server.sendmail(from_email, to_email, email_body)
+
+        return 'Email sent successfully'
+    except Exception as e:
+        return str(e)
+
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=True)
+    app.run(debug=True)
 
