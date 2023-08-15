@@ -46,7 +46,7 @@
     </nav><!-- End of Page Navbar -->
 
     <!-- page header -->
-    <header id="home1" class="header">
+    <header id="home" class="header">
         <div class="overlay"></div>
         <div class="header-content container">
             <h1 class="header-title">
@@ -76,7 +76,7 @@
                 </div>
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
-   <!-- testimonial section -->
+   <!-- Education qualification -->
    <section class="section" id="testmonial">
     <div class="container text-center">
         <p class="section-subtitle"></p>
@@ -105,7 +105,7 @@
             </div>
         </div>
     </div> <!-- end of container -->
-</section> <!-- end of testimonial section -->
+</section> <!-- end of Education Qualification-->
   </section> <!-- end of about section -->
     <!-- service section -->
     <section class="section" id="skills">
@@ -138,7 +138,7 @@
                             <img src="static/imgs/2i.png" alt="" class="icon">
                             <h6 class="title">MongoDB/h6>
                             <p class="subtitle"></p>
-                        </h6></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -172,7 +172,7 @@
         </div>
     </section><!-- end of service section -->
 
-    <!-- blog section -->
+    <!-- ACADEMIC PROJECTS -->
     <section class="section" id="blog">
         <!-- container -->
         <div class="container text-center">
@@ -189,7 +189,7 @@
                     <p><b></b></p>
                     <p></p>
                 </div>
-            </div><!-- end of blog wrapper -->
+            </div><!--  END ACADEMIC PROJECTS -->
 
             <!-- blog-wrapper -->
             <div class="blog-card">
@@ -200,7 +200,7 @@
                     <h6 class="blog-card-title">Book Recommendation System</h6>
                     <p>Book recommendation system is to enhance the user experience by reducing the effort required to discover new books.</p>
                 </div>
-            </div><!-- end of blog wrapper -->
+            </div><!-- END ACADEMIC PROJECTS -->
             <!-- blog-wrapper -->
             <div class="blog-card">
                 <div class="blog-card-header">
@@ -210,56 +210,28 @@
                     <h6 class="blog-card-title">Inventory analysis</h6>
                     <p>The goal is to gain the insights in inventory analysis and improve sales performance and make informed decisions that can lead to profitability.</p>
                 </div>
-            </div><!-- end of blog wrapper -->
-            </div><!-- end of blog wrapper -->
-        </div><!-- end of container -->
-    </section><!-- end of blog section -->
-
-    <!-- contact section -->
-    <section class="mail section" id="mail">
-  <h2 class="section-title">Contact</h2>
-  <form action="/send-email" method="POST">
-    <div class="row">
-      <div class="column">
-        <div class="input-group">
-          <input type="text" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="input-group">
-          <input type="email" name="from_email" placeholder="Your Email" required>
-        </div>
-      </div>
-      <div class="column">
-        <div class="input-group">
-          <input type="email" name="to_email" placeholder="Recipient Email" required>
-        </div>
-        <div class="input-group">
-          <input type="text" name="subject" placeholder="Subject" required>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-group">
-        <textarea name="message" placeholder="Message" style="height: 200px; font-size: 18px;" required></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-group">
-        <button type="submit">Send Email</button>
-      </div>
-    </div>
-  </form>
-</section>
-</body></html>
-    <!-- footer -->
-    <div class="container">
-        <footer class="footer">
-            <p class="mb-0"><script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com"></a></p>
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
             </div>
-        </footer>
-    </div> <!-- end of page footer -->
+            </div>
+        </div>
+    </section>
+
+   <form action="/send_email" class="contact-form col-md-10 col-lg-8 m-auto" method="post">
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <input type="text" size="50" class="form-control" placeholder="Your Name" name="name" required>
+        </div>
+        <div class="form-group col-sm-6">
+            <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+        </div>
+        <div class="form-group col-sm-12">
+            <textarea name="message" id="comment" rows="6" class="form-control" placeholder="Write Something" required></textarea>
+        </div>
+        <div class="form-group col-sm-12 mt-3">
+            <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+        </div>
+    </div>
+</form>
+
 
 	<!-- core  -->
     <script src="static/assets/vendors/jquery/jquery-3.4.1.js"></script>
