@@ -12232,3 +12232,23 @@ pre .code {
 .section-lg {
   padding: 100px 0 !important;
 }
+/* Optional: Add more styling for input fields and button */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px; /* Adjust the font size as needed */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
